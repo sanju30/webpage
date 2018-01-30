@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Home page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><script type="text/javascript">
+  window.onload = function () {
+    var chartlm = new CanvasJS.Chart("lm",
+    {
+
+      title:{
+      text: "Samples sold"
+      },
+       data: [
+      {
+        type: "line",
+
+        dataPoints: [
+        { x: new Date(2018, 00, 1), y: 450 },
+        { x: new Date(2018, 01, 1), y: 414 },
+        { x: new Date(2018, 02, 1), y: 520 },
+        { x: new Date(2018, 03, 1), y: 460 },
+        { x: new Date(2018, 04, 1), y: 450 },
+        { x: new Date(2018, 05, 1), y: 500 },
+        { x: new Date(2018, 06, 1), y: 480 },
+        
+        ]
+      },
+      {
+        type: "line",
+
+        dataPoints: [
+        { x: new Date(2018, 00, 1), y: 45 },
+        { x: new Date(2018, 01, 1), y: 44 },
+        { x: new Date(2018, 02, 1), y: 52 },
+        { x: new Date(2018, 03, 1), y: 60 },
+        { x: new Date(2018, 04, 1), y: 45 },
+        { x: new Date(2018, 05, 1), y: 50 },
+        
+        ]
+      }
+      ]
+    });
+
+    chartlm.render();
+      
+           var chartll = new CanvasJS.Chart("ll",
+    {
+
+      title:{
+      text: "Revenue"
+      },
+       data: [
+      {
+        type: "line",
+
+        dataPoints: [
+        { x: new Date(2018, 00, 1), y: 450 },
+        { x: new Date(2018, 01, 1), y: 414 },
+        { x: new Date(2018, 02, 1), y: 520 },
+        { x: new Date(2018, 03, 1), y: 460 },
+        { x: new Date(2018, 04, 1), y: 450 },
+        { x: new Date(2018, 05, 1), y: 500 },
+        { x: new Date(2018, 06, 1), y: 480 },
+        
+        ]
+      },
+      {
+        type: "line",
+
+        dataPoints: [
+        { x: new Date(2018, 00, 1), y: 45 },
+        { x: new Date(2018, 01, 1), y: 44 },
+        { x: new Date(2018, 02, 1), y: 52 },
+        { x: new Date(2018, 03, 1), y: 60 },
+        { x: new Date(2018, 04, 1), y: 45 },
+        { x: new Date(2018, 05, 1), y: 50 },
+        
+        ]
+      }
+      ]
+    });
+
+    chartll.render();
+      
+var chartz = new CanvasJS.Chart("Container", {
+	animationEnabled: true,
+	title:{
+		text: "users"
+	},	
+	axisY: {
+		title: "Billions of Barrels",
+		titleFontColor: "#4F81BC",
+		lineColor: "#4F81BC",
+		labelFontColor: "#4F81BC",
+		tickColor: "#4F81BC"
+	},
+	axisY2: {
+		title: "Millions of Barrels/day",
+		titleFontColor: "#C0504E",
+		lineColor: "#C0504E",
+		labelFontColor: "#C0504E",
+		tickColor: "#C0504E"
+	},	
+	toolTip: {
+		shared: true
+	},
+	legend: {
+		cursor:"pointer",
+		itemclick: toggleDataSeries
+	},
+	data: [{
+		type: "column",
+		name: "companies vs User",
+		legendText: "Companies",
+		showInLegend: true, 
+		dataPoints:[
+			{ label: "Freelancer", y: 266.21 },
+			{ label: "MR Agency", y: 302.25 },
+			{ label: "Corporate", y: 157.20 },
+			
+		]
+	},
+	{
+		type: "column",	
+		name: "Companies vs User",
+		legendText: "User",
+		axisYType: "secondary",
+		showInLegend: true,
+		dataPoints:[
+			{ label: "Freelancer", y: 10.46 },
+			{ label: "MR Agency", y: 2.27 },
+			{ label: "Corporate", y: 3.99 },
+			
+		]
+	}]
+});
+chartz.render();
+
+function toggleDataSeries(e) {
+	if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+		e.dataSeries.visible = false;
+	}
+	else {
+		e.dataSeries.visible = true;
+	}
+	chartz.render();
+}
+      var chartpie = new CanvasJS.Chart("chartContainercc", {
+	animationEnabled: true,
+	title: {
+		text: "Surveys"
+	},
+	data: [{
+		type: "pie",
+		startAngle: 240,
+		yValueFormatString: "##0.00\"%\"",
+		indexLabel: "{label} {y}",
+		dataPoints: [
+			{y: 79.45, label: "Created in platform"},
+			{y: 7.31, label: "Inserted URL"},
+			
+		]
+	}]
+});
+chartpie.render();
+  }
+  </script>
+
+    
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height:5px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+         background-color: gainsboro;
+      height: 50%;
+        margin-top:60px;
+        
+    }
+      .a{
+          
+       
+          transform: translate(10%);
+          
+      }
+      
+      .m{
+          position: absolute;
+          margin-top:25px;
+          margin-left:350px;
+          margin-right:20px;
+      }
+      .p{
+          margin-top:10px;
+      }
+      .g{
+              align-content: center;
+      }
+  </style>
+</head>
+<body>  
+    
+ 
+<button style="font-size:24px",margin-left="(-50px)";> <i class="fa fa-bell-o"></i></button>
+    <button style="font-size:24px"> <i class="fa fa-user"></i></button>
+
+  
+    <h2>LOGO</h2>
+    <div class="m">
+<div class="btn-group btn-group-justified">
+  <a href="#" class="btn btn-primary">today</a>
+  <a href="#" class="btn btn-primary">this week</a>
+  <a href="#" class="btn btn-primary">last week</a> 
+    <a href="#" class="btn btn-primary">this month</a>
+  <a href="#" class="btn btn-primary">this year</a>
+  <a href="#" class="btn btn-primary">last year</a>
+    <a href="#" class="btn btn-primary">last month</a>
+   </div><div class="a">
+    <div class="row">
+       <div class="col-sm-5">
+          <div class="well">
+            <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+              <div id="ll" style="height:200px; width: 100%;">
+   </div>
+          </div>
+        </div>
+        <div class="col-sm-5">
+          <div class="well">
+            <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+              <div id="lm" style="height: 200px; width: 100%;">
+   </div>
+          </div>
+        </div>
+                 </div> 
+        <div class="row">
+        <div class="col-sm-5">
+            <div class="well">
+                <div id="chartContainercc" style="height: 200px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+        </div>
+            </div>
+             <div class="col-sm-5">
+          <div class="well">
+              <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                <div id="Container" style="height: 200px; width: 100%;"></div>
+           
+          </div>
+        </div>
+        </div>
+        </div>
+       </div>
+<div class="container-fluid">
+ <div class="col-sm-3 sidenav">      
+     <div class="p">
+      <ul class="nav nav-pills nav-stacked">
+       <li><a href="#">home</a></li>
+        <li><a href="#">user</a></li>
+        <li><a href="#">panel profiler</a></li>
+        <li><a href="#">surveys</a></li>
+          <li><a href="#">reports</a></li>
+        <li><a href="#">statics</a></li>
+        <li><a href="#">analyis</a></li>
+          <li><a href="#">payment</a></li>
+        <li><a href="#">redemption</a></li>
+          <li><a href="#">Plans</a></li> </ul>
+         </div>
+    </div></div>
+    </body>
+</html>
